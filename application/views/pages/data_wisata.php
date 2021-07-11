@@ -14,7 +14,6 @@
                 						<tr>
                 							<th>No</th>
                 							<th>Nama</th>
-                							<th>Gambar</th>
                 							<th>Cordinate</th>
                 							<th>Alamat</th>
                 							<th>Harga</th>
@@ -27,14 +26,13 @@
                         foreach ($wisata as $r) : ?>
                 						<tr>
                 							<td><?= $no++; ?></td>
-                							<td><?= $r['nama'] ?></td>
-                							<td><?= $r['gambar'] ?></td>
-                							<td><?= $r['cord'] ?></td>
-                							<td><?= $r['alamat'] ?></td>
-                							<td><?= $r['harga'] ?></td>
+                							<td><?= $r['nama']; ?></td>
+                							<td><?= $r['cord']; ?></td>
+                							<td><?= $r['alamat']; ?></td>
+                							<td><?= $r['harga']; ?></td>
                 							<td>
-                								<a href="" class="btn-circle btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
-                								<a href="" class="btn-circle btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                								<a href="<?= base_url();?>Home/edit_data/<?= $r['id']; ?>" class="btn-circle btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                								<a href="<?= base_url();?>Home/hapus_data/<?= $r['id']; ?>" class="btn-circle btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
                 							</td>
                 						</tr>
                 					</tbody>
