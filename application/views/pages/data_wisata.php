@@ -20,6 +20,7 @@
                 							<th>Cordinate</th>
                 							<th>Alamat</th>
                 							<th>Harga</th>
+                							<th>Gambar</th>
                 							<th>Aksi</th>
                 						</tr>
                 					</thead>
@@ -33,6 +34,7 @@
                 							<td><?= $r['cord']; ?></td>
                 							<td><?= $r['alamat']; ?></td>
                 							<td><?= $r['harga']; ?></td>
+                							<td><img src="<?=base_url('gambar/') . $r['gambar']; ?>" alt="<?= $r['nama']; ?>" style="widht:100px;height:100px;"></td>
                 							<td>
                 								<button type="button" class="btn-circle btn-sm btn-warning" data-toggle="modal"
                 									data-target="#editmodal<?= $r['id']?>">
@@ -43,8 +45,8 @@
                 										class="fas fa-trash-alt"></i></a>
                 							</td>
                 						</tr>
+										<?php endforeach ?>
                 					</tbody>
-                					<?php endforeach ?>
                 				</table>
 
                 			</div>
@@ -75,28 +77,35 @@
                 					<label for="nama" class="col-sm-2 col-form-label">Nama</label>
                 					<div class="col">
                 						<input type="text" class="form-control" id="nama" name="nama"
-                							placeholder="ex: Pantai Mutun ">
+                							placeholder="ex: Pantai Mutun " required>
                 					</div>
                 				</div>
                 				<div class="form-group row">
                 					<label for="cord" class="col-sm-2 col-form-label">Cordinate</label>
                 					<div class="col">
                 						<input type="text" class="form-control" id="cord" name="cord"
-                							placeholder="ex: 8.3405,115.0920">
+                							placeholder="ex: 8.3405,115.0920" required>
                 					</div>
                 				</div>
                 				<div class="form-group row">
                 					<label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                 					<div class="col">
                 						<input type="text" class="form-control" id="alamat" name="alamat"
-                							placeholder="ex: Jalan Hanura">
+                							placeholder="ex: Jalan Hanura" required>
                 					</div>
                 				</div>
                 				<div class="form-group row">
                 					<label for="harga" class="col-sm-2 col-form-label">Harga</label>
                 					<div class="col">
                 						<input type="number" class="form-control" id="harga" name="harga"
-                							placeholder="ex: 35000">
+                							placeholder="ex: 35000" required>
+                					</div>
+                				</div>
+                				<div class="form-group row">
+                					<label for="harga" class="col-sm-2 col-form-label">Gambar</label>
+                					<div class="col">
+                						<input type="file" class="form-control" id="userfile" name="userfile"
+                							size="20" required>
                 					</div>
                 				</div>
                 			</div>
@@ -157,6 +166,13 @@
 										value="<?= $r['harga'];?>">
                 					</div>
                 				</div>
+                				<div class="form-group row">
+                					<label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
+                					<div class="col">
+                						<input type="file" class="form-control" id="gambar" name="userfile">
+                					</div>
+                				</div>
+								<img src="<?=base_url('gambar/') . $r['gambar']; ?>" alt="<?= $r['gambar'];?>" style="width:100px;height:100px;">
                 			</div>
                 			<div class="modal-footer">
                 				<button type="submit" class="btn btn-primary">Ubah</button>
