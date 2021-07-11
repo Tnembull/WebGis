@@ -5,7 +5,7 @@
                 	<h1 class="h3 mb-4 text-gray-800">Data Wisata</h1>
                 	<div class="card shadow mb-4">
                 		<div class="card-header py-3">
-                            <a href="" class="btn btn-primary btn-small">Tambah Data</a>
+                            <a href="<?=base_url('Home/tambah_data');?>" class="btn btn-primary btn-small">Tambah Data</a>
                 		</div>
                 		<div class="card-body">
                 			<div class="table-responsive">
@@ -33,8 +33,8 @@
                 							<td><?= $r['alamat'] ?></td>
                 							<td><?= $r['harga'] ?></td>
                 							<td>
-                								<a href="" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
-                								<a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                								<a href="" class="btn-circle btn-sm btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                								<a href="" class="btn-circle btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
                 							</td>
                 						</tr>
                 					</tbody>
