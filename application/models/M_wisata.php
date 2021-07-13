@@ -17,6 +17,7 @@ class M_wisata extends CI_Model {
         $data = [
 
             "nama" => $this->input->post('nama',TRUE),
+            "id_icons" => $this->input->post('id_icons',TRUE),
             "cord" => $this->input->post('cord',TRUE),
             "alamat" => $this->input->post('alamat',TRUE),
             "harga" => $this->input->post('harga',TRUE)
@@ -39,6 +40,7 @@ class M_wisata extends CI_Model {
         # Query Untuk Mengubah data yang di dipilh sesuai id dari database
         $data = [
             "id" => $this->input->post('id',True),
+            "id_icons" => $this->input->post('id_icons',True),
             "nama" => $this->input->post('nama', TRUE),
             "cord" => $this->input->post('cord', TRUE),
             "alamat" => $this->input->post('alamat', TRUE),
@@ -57,6 +59,13 @@ class M_wisata extends CI_Model {
         $this->db->delete('wisata');
     }
 
-
+    public function semua_data()
+    {
+        # Query Untuk Join Table icons
+        $this->db->select('*');
+        $this->db->from('wisata');
+        $this->db->join('icons','wisata.id_icons=icons.id_icon','left');
+        return $this->db->get('');
+    }
 
 }

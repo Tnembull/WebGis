@@ -48,6 +48,11 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Data Wisata</span></a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" href="<?=base_url('Home/data_icon')?>">
+        <i class="fas fa-fw fa-table"></i>
+        <span>Data Icons</span></a>
+</li>
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

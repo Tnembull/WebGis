@@ -16,6 +16,7 @@
                 					<thead>
                 						<tr>
                 							<th>No</th>
+                							<th>Gambar Icons</th>
                 							<th>Nama</th>
                 							<th>Cordinate</th>
                 							<th>Alamat</th>
@@ -30,6 +31,7 @@
                         foreach ($wisata as $r) : ?>
                 						<tr>
                 							<td><?= $no++; ?></td>
+                							<td><img src="<?=base_url('gambar/icons/') . $r['gambar_icon']; ?>" alt="<?= $r['nama_icon']; ?>" style="widht:50px;height:50px;"></td>
                 							<td><?= $r['nama']; ?></td>
                 							<td><?= $r['cord']; ?></td>
                 							<td><?= $r['alamat']; ?></td>
@@ -73,6 +75,35 @@
                 			</div>
                 			<div class="modal-body">
                 				<?= form_open_multipart('Home/proses_tambah_data');?>
+								<div class="form-group row">
+									<label for="id_icons" class="col-sm-2 col-form-label">Pilih Icons</label>
+									<ol>
+											<?php foreach ($icons as $i):?>
+											<li>
+											<?= $i['gambar_icon'];?>
+											</li>
+											<?php endforeach; ?>
+										</ol>
+									<div class="col">
+										<select name="id_icons" id="id_icons" class="form-control">
+										<option disabled selected> Pilih </option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										</select>
+									</div>
+								</div>
                 				<div class="form-group row">
                 					<label for="nama" class="col-sm-2 col-form-label">Nama</label>
                 					<div class="col">
@@ -138,6 +169,35 @@
                 			<div class="modal-body">
                 				<?= form_open_multipart('Home/proses_edit_data');?>
 								<input type="hidden" name="id" value="<?= $r['id'];?>">
+								<div class="form-group row">
+									<label for="id_icons" class="col-sm-2 col-form-label">Pilih Icons</label>
+									<ol>
+											<?php foreach ($icons as $i):?>
+											<li>
+											<?= $i['gambar_icon'];?>
+											</li>
+											<?php endforeach; ?>
+										</ol>
+									<div class="col">
+										<select name="id_icons" id="id_icons" class="form-control">
+										<option disabled selected><?= $r['id_icons'];?></option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										</select>
+									</div>
+								</div>
                 				<div class="form-group row">
                 					<label for="nama" class="col-sm-2 col-form-label">Nama</label>
                 					<div class="col">
